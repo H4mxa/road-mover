@@ -1,8 +1,13 @@
 import React from 'react';
-import {Text} from 'react-native';
+import {View, Text} from 'react-native';
+import {styles} from './styles';
 
 const HomeScreen = () => {
-  return <Text>HomeScreen</Text>;
+  return (
+    <View style={styles.container}>
+      <Text>HomeScreen</Text>
+    </View>
+  );
 };
 
 export default HomeScreen;

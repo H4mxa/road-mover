@@ -1,8 +1,13 @@
 import React from 'react';
-import {Text} from 'react-native';
+import {View, Text} from 'react-native';
+import {styles} from './styles';
 
 const FavoriteScreen = () => {
-  return <Text>Favorite</Text>;
+  return (
+    <View style={styles.container}>
+      <Text>Favorite</Text>
+    </View>
+  );
 };
 
 export default FavoriteScreen;
