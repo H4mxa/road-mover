@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unstable-nested-components */
 import React, {useRef} from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import FavoriteScreen from '../screens/Favorite';
@@ -7,6 +8,7 @@ import Icon from '../components/Icons';
 import {colors, sizes} from '../../modules/constants/theme';
 import {Animated} from 'react-native';
 import {styles} from './styles';
+import {iconTypes} from '../../modules/constants/icons';
 
 const Tab = createBottomTabNavigator();
 
@@ -41,7 +43,7 @@ const TabNavigator = () => {
               options={{
                 tabBarIcon: ({focused}) => (
                   <Icon
-                    icon={name}
+                    icon={name as iconTypes}
                     size={40}
                     style={{tintColor: focused ? colors.primary : colors.gray}}
                   />

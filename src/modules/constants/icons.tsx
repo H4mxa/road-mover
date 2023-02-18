@@ -21,3 +21,15 @@ export default {
   Filter,
   Back,
 };
+
+export type iconTypes =
+  | 'Home'
+  | 'FavoriteFilled'
+  | 'Favorite'
+  | 'Hamburger'
+  | 'Search'
+  | 'Notification'
+  | 'ArrowLeft'
+  | 'Location'
+  | 'Filter'
+  | 'Back';

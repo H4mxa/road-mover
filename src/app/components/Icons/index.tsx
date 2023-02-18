@@ -1,20 +1,18 @@
 import React from 'react';
 import {Image, TouchableOpacity} from 'react-native';
-import icons from '../../modules/constants/icons';
+import icons, {iconTypes} from '../../../modules/constants/icons';
+import {styles} from './styles';
 
 type propsTypes = {
   onPress?: () => void;
-  icon: string | any;
-  size: number;
-  style: any;
+  icon: iconTypes;
+  size?: number;
+  style?: any;
 };
 
 const Icon = ({onPress, icon, style, size = 32}: propsTypes) => {
   const image = (
-    <Image
-      source={icons[icon] as any}
-      style={[style, {width: size, height: size, resizeMode: 'cover'}]}
-    />
+    <Image source={icons[icon] as any} style={[style, styles({size}).image]} />
   );
 
   if (onPress) {
