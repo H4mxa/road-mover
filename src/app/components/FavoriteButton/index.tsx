@@ -5,8 +5,8 @@ import Icon from '../Icons';
 import {styles} from './styles';
 
 type propTypes = {
-  active: boolean;
-  style: object;
+  active?: boolean;
+  style?: object;
 };
 
 const FavoriteButton = ({active, style}: propTypes) => {

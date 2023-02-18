@@ -1,10 +1,11 @@
 import React from 'react';
 import {ScrollView, View} from 'react-native';
-import {TOP_PLACES} from '../../../modules/data';
+import {PLACES, TOP_PLACES} from '../../../modules/data';
 import MainHeader from '../../components/MainHeader';
 import ScreenHeader from '../../components/ScreenHeader';
 import SectionHeader from '../../components/SectionHeader';
 import TopPlacesCarousel from '../../components/TopPlacesCarousel';
+import TripList from '../../components/TripList';
 import {styles} from './styles';
 
 const HomeScreen = () => {
@@ -19,6 +20,7 @@ const HomeScreen = () => {
           buttonTitle="See All"
           onPress={() => {}}
         />
+        <TripList list={PLACES} />
       </ScrollView>
     </View>
   );
