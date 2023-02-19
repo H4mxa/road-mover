@@ -5,12 +5,14 @@ import {dataList} from './core/types';
 import Card from './core/constants';
 import {styles} from './styles';
 import FavoriteButton from '../FavoriteButton';
+import {useTopPlacesCarousel} from './hooks/useTopPlacesCarousel';
 
 type propTypes = {
   list: dataList;
 };
 
 const TopPlacesCarousel = ({list}: propTypes) => {
+  const {handleMethod} = useTopPlacesCarousel();
   return (
     <FlatList
       data={list}
@@ -21,7 +23,9 @@ const TopPlacesCarousel = ({list}: propTypes) => {
       keyExtractor={i => i.id as any}
       renderItem={({item, index}) => {
         return (
-          <TouchableOpacity style={styles({index, list}).cardContainer}>
+          <TouchableOpacity
+            onPress={() => handleMethod('navigateToTripDetails')?.(item)}
+            style={styles({index, list}).cardContainer}>
             <View style={[styles({}).card, shadow.dark]}>
               <FavoriteButton style={styles({}).favorite} active />
               <View style={styles({}).imageBox}>
