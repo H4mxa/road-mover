@@ -17,6 +17,7 @@ const MainNavigator = () => {
           component={TabNavigator}
           options={{
             headerShown: false,
+            gestureEnabled: false,
           }}
         />
         <Stack.Screen
@@ -24,6 +25,7 @@ const MainNavigator = () => {
           component={TripDetailsScreen}
           options={{
             headerShown: false,
+            gestureEnabled: false,
             cardStyleInterpolator: ({current: {progress}}) => ({
               cardStyle: {
                 opacity: progress,

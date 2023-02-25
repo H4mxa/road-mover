@@ -1,12 +1,12 @@
 import React from 'react';
-import {Image, StyleSheet, View} from 'react-native';
+import {View} from 'react-native';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import Icon from '../../components/Icons';
 import {useTripDetails} from './hooks/useTripDetails';
 import {styles} from './styles';
-import {SharedElement} from 'react-navigation-shared-element';
-import TripDetailsCard from '../../components/TripDetailsCard';
+import TripDetailsCard from './components/TripDetailsCard';
 import * as Animatable from 'react-native-animatable';
+import TripDetailsCarousel from './components/TripDetailsCarousel';
 
 type propTypes = {
   navigation?: any;
@@ -17,6 +17,7 @@ const TripDetailsScreen = ({navigation, route}: propTypes) => {
   const insets = useSafeAreaInsets();
   const {handleMethod} = useTripDetails();
   const {trip} = route.params;
+  const slides = [trip.image, ...trip.gallery];
   return (
     <View style={styles.container}>
       <Animatable.View
@@ -31,7 +32,10 @@ const TripDetailsScreen = ({navigation, route}: propTypes) => {
           onPress={() => handleMethod('goBack')?.(navigation)}
         />
       </Animatable.View>
-      <SharedElement
+
+      <TripDetailsCarousel slides={slides} id={trip.id} />
+
+      {/* <SharedElement
         id={`trip.${trip.id}.image`}
         style={StyleSheet.absoluteFillObject}>
         <View style={[StyleSheet.absoluteFillObject, styles.imageBox]}>
@@ -40,7 +44,7 @@ const TripDetailsScreen = ({navigation, route}: propTypes) => {
             source={trip.image}
           />
         </View>
-      </SharedElement>
+      </SharedElement> */}
       <TripDetailsCard trip={trip} />
     </View>
   );

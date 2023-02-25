@@ -1,5 +1,5 @@
 import {StyleSheet} from 'react-native';
-import {colors, sizes, spacing} from '../../../modules/constants/theme';
+import {colors, sizes, spacing} from '../../../../../modules/constants/theme';
 
 export const styles = StyleSheet.create({
   card: {
