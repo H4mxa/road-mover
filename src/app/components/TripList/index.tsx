@@ -5,6 +5,7 @@ import FavoriteButton from '../FavoriteButton';
 import {dataList} from '../TopPlacesCarousel/core/types';
 import {useTripList} from './hooks/useTripList';
 import {styles} from './styles';
+import {SharedElement} from 'react-navigation-shared-element';
 
 type propTypes = {
   list: dataList;
@@ -22,9 +23,11 @@ const TripList = ({list}: propTypes) => {
             key={item.id}
             style={styles.cardContainer}>
             <View style={[styles.card, shadow.light]}>
-              <View style={styles.imageBox}>
-                <Image style={styles.image} source={item.image} />
-              </View>
+              <SharedElement id={`trip.${item.id}.image`}>
+                <View style={styles.imageBox}>
+                  <Image style={styles.image} source={item.image} />
+                </View>
+              </SharedElement>
               <View style={styles.footer}>
                 <View style={styles.titleBox}>
                   <Text style={styles.title}>{item.title}</Text>

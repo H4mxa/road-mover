@@ -3,19 +3,19 @@ import React, {useRef} from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import FavoriteScreen from '../screens/Favorite';
 import SearchScreen from '../screens/Search';
-import HomeScreen from '../screens/Home';
 import Icon from '../components/Icons';
 import {colors, sizes} from '../../modules/constants/theme';
 import {Animated} from 'react-native';
 import {styles} from './styles';
 import {iconTypes} from '../../modules/constants/icons';
+import HomeNavigator from './HomeNavigator';
 
 const Tab = createBottomTabNavigator();
 
 const tabs = [
   {
     name: 'Home',
-    screen: HomeScreen,
+    screen: HomeNavigator,
   },
   {
     name: 'Search',

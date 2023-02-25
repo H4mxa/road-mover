@@ -19,6 +19,8 @@ export const styles = ({index, list}: propTypes) =>
       width: CARD_WIDTH,
       height: CARD_HEIGHT,
       marginVertical: 10,
+      backgroundColor: colors.white,
+      borderRadius: sizes.radius,
     },
     image: {
       width: CARD_WIDTH,
